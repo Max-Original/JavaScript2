@@ -23,26 +23,41 @@ for ( let key in employeeSalaries) {
 
 console.log(count);
 
-function doo(one, two, something) {
+function plus(a,b){
+	return a + b;
+};
+function mines(a,b){
+	let c = a - b;
+	return c;
+};
+function multiply(a,b){
+	return a * b;
+};
+function divide(a,b){
+	return a / b;
+};
+let one;
+let two;
+
+
+
+function doo(one,two,something) {
 	if (something == plus) {
 		return one + two;
 	} else if (something == mines) {
-		if (one < 0) {
-			throw new RangeError("first value cant be less then 0");
-		}
 		return one - two;
 	} else if (something == multiply) {
-		if (one < 0) {
+		if (one <= 0) {
 			throw new Error("first value cant be less then 0");
-		} else if (two < 0) {
+		} else if (two <= 0) {
 			throw new Error("Second value cant be less then 0");
 		} else {
 			return one * two;
 		}
 	} else if (something == divide) {
-		if (one < 0) {
+		if (one <= 0) {
 			throw new Error("first value cant be less then 0");
-		} else if (two < 0) {
+		} else if (two <= 0) {
 			throw new Error("Second value cant be less then 0");
 		} else {
 			return one / two;
@@ -50,7 +65,5 @@ function doo(one, two, something) {
 	}
 }
 
-try{
-doo(0,2,mines)}catch (err) {
-	console.log('error happend---> '+err);
-}
+console.log(doo(5,0,divide));
+
